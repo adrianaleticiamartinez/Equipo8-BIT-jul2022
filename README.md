@@ -8,6 +8,7 @@
 - Topacio Malinali Manrique Bences
 
 Las teconologías utilizadas Python(Dependencias: Pandas, cryptography, Pyspark, tkinter)
+La implementación en Pyspark se encuentra en la rama pysp
 
 ## Aplicación
 Aplicación de consola: [`Sistema de consulta`](./Solucion/BBVA.py)
