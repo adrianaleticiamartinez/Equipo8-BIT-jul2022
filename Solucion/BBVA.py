@@ -26,13 +26,16 @@ def consulta(rol):
 					print("\n",ide, "\n")
 
 				decision = input("¿Desea buscar otro registro?\nS. Sí\nN. No\n")
-				if(decision == "n" or ecision == "N"):
+				if(decision == "n" or decision == "N"):
 					os.system ("clear") #macOS, Linux
 					#os.system("cls") #Windows
 					print("\nHasta pronto!\n")
 					os.system("rm Datos_Descifrados.csv")
 					os.system("rm Admin_Descifrado.csv")
 					break
+				elif(decision == "s" or decision == "S"):
+					os.system ("clear") #macOS, Linux
+					#os.system("cls") #Windows
 				else:
 					os.system ("clear") #macOS, Linux
 					#os.system("cls") #Windows
@@ -59,7 +62,6 @@ def consulta(rol):
 					cuenta = ide['cuenta']
 					email = ide['email'].astype(str).str[0:3]+"****"
 
-					
 					dff = pd.DataFrame({'ID':iD, 'Nombre':nombre, 'ApellidoP':apellidoP, 'ApellidoM': apellidoM, 
 						'FechaN': fechaN, 'Sexo': sexo, 'Segmento': segmento, 'Nacionalidad': nacionalidad, 
 						'RFC':rfc, 'TipoID': tipoID, 'NumeroID': numeroID, 'Cuenta': cuenta, 'Email':email})
@@ -67,13 +69,16 @@ def consulta(rol):
 
 					print("\n",dff,"\n")
 				decision = input("¿Desea buscar otro registro?\nS. Sí\nN. No\n")
-				if(decision == "n" or ecision == "N"):
+				if(decision == "n" or decision == "N"):
 					os.system ("clear") #macOS, Linux
 					#os.system("cls") #Windows
 					os.system("rm Datos_Descifrados.csv")
 					os.system("rm Admin_Descifrado.csv")
 					print("\nHasta pronto!\n")
 					break
+				elif(decision == "s" or decision == "S"):
+					os.system ("clear") #macOS, Linux
+					#os.system("cls") #Windows
 				else:
 					os.system ("clear") #macOS, Linux
 					#os.system("cls") #Windows
@@ -82,28 +87,33 @@ def consulta(rol):
 			s = True
 			while(s == True):
 				search = input("\nIngresa el ID del registro: ")
-				ide = datos[datos['ID']==search]
+				ide = datos[datos['idCliente']==search]
 				if(ide.empty):
 					print("\nNada que mostrar\n")
 				else:
-					iD = ide['ID']
+					iD = ide['idCliente']
 					nombre = ide['nombre']
-					apellidos = ide['apellidos']
-					
-					dff = pd.DataFrame({'ID':iD, 'Nombre':nombre, 'Apellidos':apellidos})
+					sexo = ide['sexo']
+					segmento = ide['segmento']
+					cuenta = ide['cuenta']
+					dff = pd.DataFrame({'ID':iD, 'Nombre':nombre, 'Sexo':sexo, 'Segmento': segmento, 'Cuenta': cuenta})
 					dff.index = [""]
 
 					print("\n",dff,"\n")
 				decision = input("¿Desea buscar otro registro?\nS. Sí\nN. No\n")
-				if(decision == "n" or ecision == "N"):
+				if(decision == "n" or decision == "N"):
 					os.system ("clear") #macOS, Linux
 					#os.system("cls") #Windows
 					os.system("rm Datos_Descifrados.csv")
 					os.system("rm Admin_Descifrado.csv")
 					print("\nHasta pronto!\n")
 					break
+				elif(decision == "s" or decision == "S"):
+					os.system ("clear") #macOS, Linux
+					#os.system("cls") #Windows
 				else:
 					os.system ("clear") #macOS, Linux
+					break
 					#os.system("cls") #Windows
 		return
 	except:
@@ -192,8 +202,8 @@ def descrifrarDocumento2(nombreArchivo, llave):
         
     except:
     	os.system("clear")
-    	os.system("rm Admin_DescifradoAES.csv")
     	os.system("rm Admin_Descifrado.csv")
+    	os.system("rm Datos_Descifrados.csv")
     	os.system("clear")
     	print("\nHa ocurrido un error, ejecuta nuevamente el programa...\n")
 
@@ -222,15 +232,15 @@ def crifrarDocumento(nombreArchivo1, nombreArchivo2, llave):
 	        archivoCifrado2.write(docCifrado2)
 
 	    os.system("clear")
-	    os.system("rm Usuarios.csv")
-	    os.system("rm Admin.csv")
+	    os.system("rm baseClientesHackaton2022.csv")
+	    os.system("rm baseUsuarios.csv")
 	    os.system("clear")
 	    main()
 
 	except:
 		os.system("clear")
-		os.system("rm Usuarios.csv")
-		os.system("rm Admin.csv")
+		os.system("rm baseClientesHackaton2022.csv")
+		os.system("rm baseUsuarios.csv")
 		os.system("clear")
 		main()
 
