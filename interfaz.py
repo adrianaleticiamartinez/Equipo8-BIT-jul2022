@@ -9,15 +9,13 @@ import tkinter as tk
 from tkinter import messagebox
 
 def validar():
-    if entrada.get()== "name":
+    if entrada.get()== :
         abrirventana2()
     else:
         messagebox.showwarning("Usuario o contraseña incorrecta")
         
 def abrirventana2():
-    import tkinter as tk
-    from tkinter import messagebox
-    ventana = tk.Tk()
+    ventana = tk.Tk() 
     ventana.title("Informacion de clientes")
     ventana.geometry("500x800")
 
@@ -38,17 +36,14 @@ def abrirventana2():
 def saludo(name):
     print("Hola " + name)  
     
-def mostrar_informacion():
-    if nivel_autorizacion = 
-        print("")    
+# def mostrar_informacion():
+#     if nivel_autorizacion = 
+#         print("")    
     
 def cerrarventana():
     ventana.destroy()
     
-    
-    
-import tkinter as tk
-from tkinter import messagebox    
+ 
 ventana = tk.Tk()
 ventana.title("BBVA Ejecutivos")
 ventana.geometry("400x300")

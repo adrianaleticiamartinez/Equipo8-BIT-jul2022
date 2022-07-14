@@ -1,14 +1,19 @@
+'''
+	Equipo 8:
+		Luis Alberto Mendoza Rodríguez
+		Jordan Morales Poncio
+		Edwin Hazel Chávez Martínes
+		Topacio Malinali Manrique Bences
+		Roberto Carlos Peredo Guzmán
+		Mario Castelán Hernández
+'''
+
 import os
 import pandas as pd
 from getpass import getpass
 import base64
 from cryptography.fernet import Fernet
-import hashlib
-
-#pd.set_option('display.max_rows', None)
-pd.set_option('display.max_columns', None)
-
-#print(admin)
+import hashlib 
 
 def consulta(rol):
 	try:
@@ -21,6 +26,7 @@ def consulta(rol):
 				if(ide.empty):
 					print("\nNada que mostrar\n")
 				else:
+					pd.set_option('display.max_columns', None)
 					ide.columns = ['ID', 'Nombre', 'ApellidoP', 'ApellidoM', 'FechaN', 'Sexo', 'Segmento', 'Nacionalidad', 'RFC', 'TipoID', 'NumeroID', 'Cuenta', 'Email']
 					ide.index = [""]
 					print("\n",ide, "\n")
@@ -48,6 +54,7 @@ def consulta(rol):
 				if(ide.empty):
 					print("\nNada que mostrar\n")
 				else:
+					pd.set_option('display.max_columns', None)
 					iD = ide['idCliente']
 					nombre = ide['nombre']
 					apellidoP = ide['apellidoPaterno'].astype(str).str[0:3]+"****"
