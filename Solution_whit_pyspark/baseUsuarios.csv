@@ -1,0 +1,10 @@
+﻿usuario,auth,nombreCompleto,area,ubicacion ,segmento,perfil
+AndArt,qwerty,Andrea Arteaga González,Comercial,Querétaro,0,Manager
+EduardoE,ABC123,Eduardo Emmanuel López Contreras,Sucursales,Monterrey,1,Manager
+Gustavo_Moreno,456098,Gustavo Moreno Rayón,Datos,Guadalajara,2,Manager
+ENM,nkdk3Cs,Elisa Navarro Martinez,Banca digital,CDMX,0,Validador
+augusto,password,Augusto Sánchez Contreras,Control,Veracruz,1,Validador
+pacoG,franK,Francisco Gamboa Cárdenas,Auditoria,Puebla,2,Validador
+RaVen_1,pass123,Raymundo Venegas Rangel,Sucursales,Tlaxcala,0,Restringido
+katy,KatiaFlores,Katia Flores Estrada,Ventas,SLP,1,Restringido
+angelperea,4ng3lPer,Angel Perea Lin,Cajeros,Nayarit,2,Restringido
