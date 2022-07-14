@@ -4,6 +4,10 @@ from getpass import getpass
 import base64
 from cryptography.fernet import Fernet
 import hashlib
+import pyspark
+from pyspark.sql import SparkSession
+spark = SparkSession.builder.master("local[1]").appName("SparkByExamples.com").getOrCreate()
+
 
 #pd.set_option('display.max_rows', None)
 #pd.set_option('display.max_columns', None)
@@ -12,7 +16,7 @@ import hashlib
 
 def consulta(rol):
 	try:
-		datos = pd.read_csv('Datos_Descifrados.csv', header=0)
+		datos = spark.read.csv('Datos_Descifrados.csv')
 		if(rol == "manager"):
 			s = True
 			while(s == True):
@@ -158,10 +162,10 @@ def descrifrarDocumento1(nombreArchivo, llave):
 
         with open("Datos_Descifrados.csv", "wb") as archivoDescifrado:
             archivoDescifrado.write(datosDescifrados)
-        
+    
     except:
     	os.system("clear")
-    	os.system("rm Datos_Descifrados.csv")
+        os.system("rm Datos_Descifrados.csv")
     	os.system("rm Admin_Descifrado.csv")
     	os.system("clear")
     	print("\nHa ocurrido un error, ejecuta nuevamente el programa...\n")
