@@ -8,3 +8,10 @@
 - Topacio Malinali Manrique Bences
 
 Las teconologías utilizadas Python(Dependencias: Pandas, cryptography, Pyspark, tkinter)
+
+## Aplicación
+Aplicación de consola: [`Sistema de consulta`](./Solucion/BBVA.py)
+
+## Interfaz 
+Interfaz gráfica en tkinter: [`Interfaz`](./interfaz.py)
+
